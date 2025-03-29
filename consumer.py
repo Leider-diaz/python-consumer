@@ -10,12 +10,12 @@ channel = connection.channel()
 #channel.queue_declare(queue='cola5')
 
 def callback(ch, method, properties, body):
-    logging.info("Mensaje recibido:", body.decode())
+    print("Mensaje recibido:", body.decode())
 
 # Suscribirse a la cola
 channel.basic_consume(queue='cola5',
                       on_message_callback=callback,
                       auto_ack=True)
 
-logging.info('Esperando mensajes. Presiona CTRL+C para salir')
+print('Esperando mensajes. Presiona CTRL+C para salir')
 channel.start_consuming()
