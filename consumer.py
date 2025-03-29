@@ -1,5 +1,4 @@
 import pika
-import logging
 
 # Conexión a RabbitMQ usando la IP del servidor RabbitMQ
 connection = pika.BlockingConnection(
